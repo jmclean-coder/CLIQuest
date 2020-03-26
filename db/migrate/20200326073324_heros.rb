@@ -16,3 +16,4 @@ class Heros < ActiveRecord::Migration[5.0]
     end
   end
 end
+
