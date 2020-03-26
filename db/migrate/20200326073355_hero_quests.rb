@@ -1,4 +1,4 @@
-class CreateHeroQuests < ActiveRecord::Migration[5.0]
+class HeroQuests < ActiveRecord::Migration[5.0]
   def change
     create_table :hero_quests do |t|
       t.integer :hero_id
@@ -7,3 +7,4 @@ class CreateHeroQuests < ActiveRecord::Migration[5.0]
     end
   end
 end
+

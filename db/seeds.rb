@@ -1,0 +1,4 @@
+Hero.destroy_all
+Quest.destroy_all
+User.destroy_all
+Monster.destroy_all
