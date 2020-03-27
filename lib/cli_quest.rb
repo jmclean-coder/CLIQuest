@@ -35,9 +35,6 @@ class CliQuest
         else
             puts "Sorry, that is not an option"
             menu
-        #create new hero
-        #load my heroes
-        #exit (quit game) 
         end
     end
 
@@ -57,8 +54,7 @@ class CliQuest
         puts text
         hero_name = gets.chomp
         if @user.heroes.find_by(name: hero_name)
-            puts "This hero is still alive and adventuring! Please enter a hero name.".red
-            # puts "Enter 1 to go back?"
+            puts "This hero is still alive and adventuring! Please enter a hero name.".light_red
             hero_creation 
         else
             @hero = Hero.create(
@@ -255,6 +251,4 @@ class CliQuest
 
             hero_start
     end
- # @quest.hero_quests[0].hero targets hero
- # @quest.quest_monsters[0].monster targets monster
 end

@@ -27,4 +27,7 @@ Changelog: More features and design on the way!
 7. Run rake db:seed to seed your database with data
 8. In your command line, type your path to the runner file in the bin folder and have fun!
 
-link to the license for your code: 
+Video demo of this builds use: 
+https://www.youtube.com/watch?v=UYQItjX7xFQ&feature=youtu.be
+
+License: www.joshuamclean.dance
