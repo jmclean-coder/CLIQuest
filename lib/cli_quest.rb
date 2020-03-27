@@ -45,6 +45,8 @@ class CliQuest
         puts "When you are ready, press 'enter' to continue.".light_blue
         input = gets.strip
     end
+
+    #hero creation
         
     def hero_creation
         text = <<~TEXT.strip
@@ -141,17 +143,26 @@ class CliQuest
         puts "You have #{@hero.gold} gold"
     end
 
+    # Quest and Fights
+
     def start_quest
         @quest = Quest.all.sample
         @monster = Monster.all.sample
         @hero_quest = HeroQuest.create(hero_id: @hero.id, quest_id: @quest.id)
         @monster_quest = QuestMonster.create(monster_id: @monster.id, quest_id: @quest.id)
-        #binding.pry
         puts "You were notified of a quest called: #{@quest.quest_name} and chose to embark." 
         puts "If you succeed, you will recieve #{@quest.reward_gold} gold and #{@quest.reward_exp} experience."
         puts "Who knows what untold peril awaits you..."
         continue 
         fight
+    end
+
+    def hero_total_stats(hero)
+        hero_total = hero.strength + hero.dexterity + hero.intellect
+    end
+
+    def monster_total_stats(monster)
+        monster_total = monster.strength + monster.dexterity + monster.intellect
     end
     
     
@@ -162,7 +173,7 @@ class CliQuest
         hero_total = hero_total_stats(@hero)
         monster_total = monster_total_stats(@monster)
 
-        if hero_total > monster_total
+        if hero_total >= monster_total
             puts "You are massively more powerful than this #{@monster.name}. You emerge victorius!"
             puts "Quest complete! You have recieved #{@quest.reward_gold} gold and #{@quest.reward_exp} experience"
 
@@ -188,26 +199,15 @@ class CliQuest
     end
 
 
-    def hero_total_stats(hero)
-        hero_total = hero.strength + hero.dexterity + hero.intellect
-    end
-
-    def monster_total_stats(monster)
-        monster_total = monster.strength + monster.dexterity + monster.intellect
-    end
-
     def level_up
         exp = @hero.exp
         req = @hero.exp_til_level
-        
         if exp >= req
             puts "You have gained enough exp to level up!"
             char_update
         else
             puts "You need more experience!".red
-
             continue
-
             hero_start
         end  
     end
