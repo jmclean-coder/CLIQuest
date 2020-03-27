@@ -129,6 +129,7 @@ class CliQuest
 
     def hero_status
         puts "Your name is #{@hero.name}."
+        puts "You are currently level #{@hero.level}."
         puts "You have #{@hero.exp} experience points."
         puts "You need #{@hero.exp_til_level} points to level up."
         puts "You have #{@hero.hit_points} hit points."
@@ -238,6 +239,7 @@ class CliQuest
                 @hero.update({intellect: new_int})
             end
             @hero.save
+            puts "You are currently level #{@hero.level}."
             puts "You now have #{@hero.exp} experience points."
             puts "You now need #{@hero.exp_til_level} points to level up."
             puts "You now have #{@hero.hit_points} hit points."
