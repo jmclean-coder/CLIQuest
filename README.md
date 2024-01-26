@@ -1,11 +1,11 @@
-# Hello and welcome to CLI Questv 1.0.0!
+# Hello and welcome to CLI-Quest v1.0.0!
 
 #### 
 
 # Description 
-CLI-Quest is a text based fighter RPG that you can run from your command line. This is my first CLI App and a project I did for my first module of Flatiron Code School.
+CLI-Quest is a text based fighter RPG that you can run from your command line. This is my first CLI App and the introductory project I completed for my first module of Flatiron School.
 
-This build includes:
+Features:
 User rememberance and persistence
 Users can have multiple Heros, which are persisted across games.
 Basic Character creation
@@ -13,7 +13,6 @@ Randomly generated monsters.
 Randomly generated quests.
 Hero death chance.
 
-Changelog: More features and design on the way!
 
 #### 
 
@@ -27,7 +26,7 @@ Changelog: More features and design on the way!
 7. Run rake db:seed to seed your database with data
 8. In your command line, type your path to the runner file in the bin folder and have fun!
 
-Video demo of this builds use: 
+Video demo: 
 https://www.youtube.com/watch?v=UYQItjX7xFQ&feature=youtu.be
 
 License: www.joshuamclean.dance
